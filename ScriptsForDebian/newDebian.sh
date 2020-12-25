@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Input new password:"
 read password
 echo root:$password|chpasswd
