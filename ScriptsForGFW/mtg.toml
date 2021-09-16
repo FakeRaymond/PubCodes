@@ -4,7 +4,7 @@ bind-to = "0.0.0.0:8443"
 concurrency = 10240
 tcp-buffer = "128kb"
 prefer-ip = "prefer-ipv4"
-domain-fronting-port = 8443
+domain-fronting-port = 443
 tolerate-time-skewness = "5s"
 
 [network]
