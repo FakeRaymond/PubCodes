@@ -1,6 +1,6 @@
 #! /bin/sh
 new_release_tag=$(curl -s https://api.github.com/repos/9seconds/mtg/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-new_release="mtg-"${new_release_tag:1}"-linux-amd64.tar.gz"
+new_release="mtg-"${new_release_tag:1}"-linux-"$0".tar.gz"
 curl -LOs "https://github.com/9seconds/mtg/releases/download/"$new_release_tag"/"$new_release
 tar -xzvf $new_release 
 mv ./mtg*/mtg /usr/local/bin
