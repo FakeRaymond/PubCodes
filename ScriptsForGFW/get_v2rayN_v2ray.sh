@@ -1,3 +1,5 @@
+#!/bin/bash
+
 myfun() {
     myFile=$1
 

@@ -1,2 +1,2 @@
 #!/bin/bash
-apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get clean -y && apt-get autoclean -y
+apt-get update && apt-get -y full-upgrade && apt-get -y autoremove && apt-get -y clean && apt-get -y autoclean
