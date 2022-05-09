@@ -5,7 +5,7 @@
 ### Preparation
 
 ``` shell
-apt update && apt -qq install zip unzip 
+apt update && apt -y install zip unzip 
 ```
 
 ### Run once
@@ -13,7 +13,7 @@ apt update && apt -qq install zip unzip
 ```shell
 mkdir -p /root/.script
 cd /root/.script
-wget https://raw.githubusercontent.com/FakeRaymond/myPubScripts/main/ScriptsForGFW/get_v2rayN_xray.sh
+curl -o get_v2rayN_xray.sh -sL https://raw.githubusercontent.com/FakeRaymond/myPubScripts/main/ScriptsForGFW/get_v2rayN_xray.sh
 bash get_v2rayN_xray.sh
 ```
 
@@ -28,7 +28,7 @@ bash get_v2rayN_xray.sh
 ``` shell
 mkdir -p /root/.script
 cd /root/.script
-wget https://raw.githubusercontent.com/FakeRaymond/myPubScripts/main/ScriptsForGFW/install_mtg.sh
+curl -o install_mtg.sh -sL https://raw.githubusercontent.com/FakeRaymond/myPubScripts/main/ScriptsForGFW/install_mtg.sh
 ```
 
 ### for ARM64

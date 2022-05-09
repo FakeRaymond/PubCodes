@@ -25,7 +25,7 @@ update2=$(myfun latest_v2rayN https://api.github.com/repos/2dust/v2rayN/releases
 
 if [ $(($update1 + $update2)) -gt 0 ]; then
     curl -o xray.zip -sL https://github.com/XTLS/Xray-core/releases/latest/download/Xray-windows-64.zip
-    curl -o v2rayN.zip _sL https://github.com/2dust/v2rayN/releases/latest/download/v2rayN.zip
+    curl -o v2rayN.zip -sL https://github.com/2dust/v2rayN/releases/latest/download/v2rayN.zip
     mkdir -p v2rayN
     unzip -n v2rayN.zip
     unzip -n -d v2rayN xray.zip
