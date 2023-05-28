@@ -29,16 +29,17 @@ update1=$(check latest_xray https://api.github.com/repos/XTLS/Xray-core/releases
 update2=$(check latest_v2rayN https://api.github.com/repos/2dust/v2rayN/releases/latest)
 
 if [[ $update1 == 1 || $update2 == 1 ]]; then
-    curl -o xray.zip -sL https://github.com/XTLS/Xray-core/releases/latest/download/Xray-windows-64.zip
+    curl -o xray-core.zip -sL https://github.com/XTLS/Xray-core/releases/latest/download/Xray-windows-64.zip
     curl -o v2rayN.zip -sL https://github.com/2dust/v2rayN/releases/latest/download/v2rayN.zip
-    mkdir -p v2rayN
     unzip -n v2rayN.zip
-    unzip -n -d v2rayN xray.zip
-    rm -rf v2rayN/zh-Hans
-    rm -f v2rayN.zip
-    rm -f xray.zip
-    zip -q -m -r v2rayN.zip v2rayN
-    mv v2rayN.zip /var/www/html
+    unzip -n -d xray-core xray-core.zip
+    mv xray-core/xray.exe v2rayN/bin/Xray
+    mv xray-core/wxray.exe v2rayN/bin/Xray
+    curl -o v2rayN/bin/geoip.dat -sL https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+    curl -o v2rayN/bin/geosite.dat -sL https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
+    zip -q -m -r v2rayN-core.zip v2rayN
+    rm -rf xray-core.zip v2rayN.zip xray-core
+    mv v2rayN-core.zip /var/www/html/v2rayN.zip
 else
     echo "No update"
 fi
