@@ -11,7 +11,7 @@ apt update && apt -y install zip unzip
 ### Run once
 
 ```shell
-mkdir -p /root/.script
+mkdir -p $PWD/.script
 cd /root/.script
 curl -o get_v2rayN_xray.sh -sL https://raw.githubusercontent.com/FakeRaymond/myPubScripts/main/ScriptsForGFW/get_v2rayN_xray.sh
 bash get_v2rayN_xray.sh
@@ -20,7 +20,7 @@ bash get_v2rayN_xray.sh
 ### CRONTAB
 
 ``` shell
-(crontab -l; echo "*/10 * * * * cd /root/.script && /bin/bash get_v2rayN_xray.sh > /dev/null") | crontab -
+(crontab -l; echo "*/10 * * * * cd $PWD/.script && /bin/bash get_v2rayN_xray.sh > /dev/null") | crontab -
 ```
 
 ## Install MTG
